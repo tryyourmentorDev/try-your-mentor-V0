@@ -1,4 +1,4 @@
-# **TryYourMentor - Resume Review**
+# **TryYourMentor**
 
 A simple **Next.js** application where users can **upload** their résumé for mentor review. This project integrates **Firebase** (Storage, optional Firestore/Auth) and is deployed on **Vercel**.
 
