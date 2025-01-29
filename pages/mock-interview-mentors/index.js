@@ -1,6 +1,5 @@
 import React from "react";
-import MentorCard from "@/components/MentorCard";
-
+import MentorCard from "../../components/MentorCard";
 const MockInterviewMentors = () => {
   const mentors = [
     {
