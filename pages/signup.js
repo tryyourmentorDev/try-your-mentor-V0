@@ -16,6 +16,7 @@ export default function Signup() {
         body: JSON.stringify({ email, password }),
       });
       if (res.ok) {
+        console.log(res)
         router.push('/login');
       } else {
         alert('Sign-up failed, user may already exist');
