@@ -65,14 +65,14 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-4">
           <Link
             href="/resume-review"
-            className="mx-2 text-white hover:text-gray-200"
+            className="mx-2 text-white font-kanit hover:text-secondary-light transition duration-300"
           >
             Resume Review
           </Link>
-          <Link href="/courses" className="mx-2 text-white hover:text-gray-200">
+          <Link href="/courses" className="mx-2 text-white font-kanit hover:text-secondary-light transition duration-300">
             Courses
           </Link>
-          <Link href="/mentors" className="mx-2 text-white hover:text-gray-200">
+          <Link href="/mentors" className="mx-2 text-white font-kanit hover:text-secondary-light transition duration-300">
             Mentoring
           </Link>
           { !isLoggedIn ? <SignInButton onClick={()=>onClickedSignInButton()}/> : <></>}

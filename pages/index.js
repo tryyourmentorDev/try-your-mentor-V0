@@ -96,19 +96,19 @@ const MentoringStart = () => {
   return (
     <main className="w-full">
       {/* Hero Section */}
-      <motion.section className="bg-[#5e17eb] text-white py-16 w-full">
+      <motion.section className="bg-primary-light text-white py-16 w-full">
         <div className="flex flex-col md:flex-row items-center justify-center px-4 md:px-16">
           {/* Text Content */}
           <div
             className="md:w-3/5 lg:w-1/2 flex flex-col justify-center"
             style={{ marginLeft: "2rem" }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Find your mentor <br />
-              in the IT industry <br />
-              and get ahead
+            <h1 className="text-3xl md:text-5xl font-kanit leading-tight mb-6">
+              Find your Mentor <br />
+              in the IT Industry <br />
+              and Get Ahead
             </h1>
-            <p className="text-lg font-light">
+            <p className="text-lg font-kanit font-light">
               Discover experienced mentors to accelerate your IT career growth.
             </p>
           </div>
@@ -126,7 +126,7 @@ const MentoringStart = () => {
 
       {/* Services Section */}
       <motion.section
-        className="mt-64 bg-gray-50 py-8"
+        className="mt-4 bg-gray-50 py-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
