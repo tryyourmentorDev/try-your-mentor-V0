@@ -1,8 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ResumeReview = () => {
+  // State for the file input and upload status
+  const [file, setFile] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
+
+  // Handle file selection
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  // Handle file upload to the server/API
+  const handleUpload = async () => {
+    if (!file) return;
+    setIsUploading(true);
+
+    try {
+      // Build form data
+      const formData = new FormData();
+      formData.append("resumeFile", file);
+
+      // Make a POST request to your API route
+      const response = await fetch("/api/upload-resume", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert("File uploaded successfully!");
+      } else {
+        const errorData = await response.json();
+        alert(`Upload failed: ${errorData.error || "Unknown error"}`);
+      }
+    } catch (err) {
+      console.error("Upload error:", err);
+      alert("Something went wrong while uploading.");
+    } finally {
+      setIsUploading(false);
+      setFile(null);
+    }
+  };
+
   return (
     <main className="bg-gray-50 min-h-screen py-12">
+      {/* Hero Section */}
       <section className="mt-24 container mx-auto px-4 md:px-16 lg:px-32 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 flex flex-col justify-center">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-7">
@@ -19,6 +60,7 @@ const ResumeReview = () => {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
       <section className="mt-36 container mx-auto px-4 md:px-16 lg:px-32">
         <h2
           className="text-center font-bold mb-4"
@@ -52,8 +94,23 @@ const ResumeReview = () => {
               who have reviewed countless resumes.
             </p>
           </div>
-          {/* Add other features similarly */}
+          {/* You can add more feature boxes below */}
         </div>
+      </section>
+
+      {/* Upload Résumé Section */}
+      <section className="mt-16 container mx-auto px-4 md:px-16 lg:px-32">
+        <h2 className="text-2xl font-bold mb-4">Upload Your Résumé</h2>
+        <div className="mb-4">
+          <input type="file" onChange={handleFileChange} />
+        </div>
+        <button
+          onClick={handleUpload}
+          disabled={!file || isUploading}
+          className="bg-[#5e17eb] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#4c13c6] transition"
+        >
+          {isUploading ? "Uploading..." : "Upload"}
+        </button>
       </section>
     </main>
   );
