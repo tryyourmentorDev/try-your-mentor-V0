@@ -1,6 +1,10 @@
 // src/components/StartButton.tsx
-import { div, tr } from "framer-motion/client";
+// import { div, tr } from "framer-motion/client";
+import { auth, googleProvider } from "../lib/firebase-client";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { validateName, validateEmail, validatePassword } from "../validations/formValidation";
+import { ImSpinner6 } from "react-icons/im";
 
 const SignUpOverlay = ({signInSucessState}) => {
 
@@ -8,18 +12,63 @@ const SignUpOverlay = ({signInSucessState}) => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [isSignInSuccess, setIsSignInSuccess] = useState(false);
+  const [loadingEmailPasswordSubmit, setLoadingEmailPasswordSubmit] = useState(false);
+  const [errors, setErrors] = useState({});
 
-  const habdleSubmit = async (e) => {
+
+  const checkNull = () => {
+    if (email.trim() === "") {
+      setErrors({ ...errors, email: "Email is required" });
+    }
+
+    if (name.trim() === "") {
+      setErrors({ ...errors, email: "Name is required" });
+    }
+
+    if (password.trim() === "") {
+      setErrors({ ...errors, email: "Password is required" });
+    }
+  }
+
+  const habdleEmailPasswordSubmit = async (e) => {
+
     try {
-      const res = await fetch('/api/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-      signInSucessState(true);
+      setLoadingEmailPasswordSubmit(true);
+      
+      // validate the fields
+      const emailError = validateEmail(email);
+      const passwordError = validatePassword(password);
+      const nameError = validateName(name);
+
+      if (emailError || passwordError || nameError) {
+        setErrors({ email: emailError, password: passwordError, name: nameError });
+        setLoadingEmailPasswordSubmit(false);
+        return;
+      }
+      const userCredential = await createUserWithEmailAndPassword(auth, email.trim(), password.trim());
+      console.log(userCredential.user);
+      const user = userCredential.user;
+      const idToken = await user.getIdToken();
+      console.log("idToken", idToken);
+
+      // Set loading false
+      setLoadingEmailPasswordSubmit(false);
+      
     } catch (error) {
       console.log(error);
+      // Set loading false
+      setLoadingEmailPasswordSubmit(false);
     }
+    // try {
+    //   const res = await fetch('/api/users', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email, password }),
+    //   });
+    //   signInSucessState(true);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
   const habdleSubmitGoogle = async (e) => {
     try {
@@ -61,6 +110,8 @@ const SignUpOverlay = ({signInSucessState}) => {
             placeholder="Enter your name"
             required
           />
+          {/* Error Message */}
+          {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
         </div>
 
         {/* Email Field */}
@@ -81,7 +132,8 @@ const SignUpOverlay = ({signInSucessState}) => {
             placeholder="Enter your email"
             required
           />
-          {/* <p className="text-sm text-red-500 mt-1">{"errors.name"}</p> */}
+          {/* Error Message */}
+          {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
         </div>
 
         {/* Password Field */}
@@ -102,15 +154,18 @@ const SignUpOverlay = ({signInSucessState}) => {
             placeholder="Enter your password"
             required
           />
+          {/* Error Message */}
+          {errors.password && <p className="text-sm text-red-500 mt-1">{errors.password}</p>}
         </div>
 
         {/* Submit Button */}
         <button
           type="submit"
           className="w-full bg-primary-light text-white font-kanit py-2 rounded-lg hover:bg-primary-dark transition duration-300"
-          onClick={habdleSubmit}
+          onClick={habdleEmailPasswordSubmit}
+          disabled={loadingEmailPasswordSubmit}
         >
-          Sign Up
+          {loadingEmailPasswordSubmit ?`Signig Up`: `Sign Up`}
         </button>
       </div>
 
@@ -164,7 +219,7 @@ const SignUpOverlay = ({signInSucessState}) => {
 
   
   return (
-<div>
+    <div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Image Column (hidden on mobile) */}
         <div className="hidden lg:block">
@@ -176,8 +231,8 @@ const SignUpOverlay = ({signInSucessState}) => {
         </div>
 
         {/* Text Content Column */}
-        <div>
-      {signUpContent}
+        <div className="">
+          {signUpContent}
         </div>
       </div>
     </div>
