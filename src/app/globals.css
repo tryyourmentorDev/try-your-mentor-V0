@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+
+@theme {
+
+
+  --font-display: "Satoshi", "sans-serif";
+  --font-kanit: "Kanit", "sans-serif";
+
+
+  --color-background:var(--color-white);
+
+  --color-primary: var(--color-blue-700);
+  --color-primary-light: var(--color-blue-100);
+  --color-primary-dark:  var(--color-blue-800);
+
+  --color-secondary: var(--color-violet-700);
+  --color-secondary-light: var(--color-violet-400);
+  --color-secondary-dark: var(--color-violet-800);
+
+  --color-base: var(--color-gray-600);
+  --color-base-light: var(--color-gray-400);
+  --color-base-dark: var(--color-gray-900);
+  --color-heading: var(--color-blue-900);
+  --color-muted: var(--color-gray-200);
+  --color-link: var(--color-blue-900);
+  --color-error: var(--color-red-400);
+  --color-success: var(--color-blue-900);
+  --color-warning: var(--color-blue-900);
+  --color-accent: var(--color-blue-900);
+  --color-light: var(--color-white);
+
+
+
+
+
+
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado-500: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  /* ... */
+}
