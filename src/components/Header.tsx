@@ -48,10 +48,10 @@ const Header = () => {
 
   return (
     <>
-    <header className="bg-primary-light">
+    <header className="bg-background shadow-sm">
       <div className="container mx-auto flex justify-between items-center p-4">
-        <Link href="/" className="text-xl font-bold text-white">
-          tryYourMentor
+        <Link href="/" className="text-xl font-bold text-primary-dark font-kanit">
+          tryYourMentora
         </Link>
 
         {/* Mobile Menu Button */}
@@ -66,14 +66,14 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-4">
           <Link
             href="/resume-review"
-            className="mx-2 text-white font-kanit hover:text-secondary-light transition duration-300"
+            className="mx-2 text-primary font-kanit hover:text-secondary transition duration-300"
           >
             Resume Review
           </Link>
-          <Link href="/courses" className="mx-2 text-white font-kanit hover:text-secondary-light transition duration-300">
+          <Link href="/courses" className="mx-2 text-primary font-kanit hover:text-secondary transition duration-300">
             Courses
           </Link>
-          <Link href="/mentors" className="mx-2 text-white font-kanit hover:text-secondary-light transition duration-300">
+          <Link href="/mentoring/register" className="mx-2 text-primary font-kanit hover:text-secondary transition duration-300">
             Mentoring
           </Link>
           {/* { !isLoggedIn ? <SignInButton onClick={()=>onClickedSignInButton()}/> : <></>} */}
