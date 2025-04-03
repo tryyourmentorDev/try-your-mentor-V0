@@ -1,0 +1,140 @@
+{
+    "educationLevel": {
+        "type": "select",
+        "label": "Education Level",
+        "name": "educationLevel",
+        "placeholder": "Select your education level",
+        "options": [
+            { "value": "high_school", "label": "High School" },
+            { "value": "undergraduate", "label": "Undergraduate" },
+            { "value": "postgraduate", "label": "Postgraduate" },
+            { "value": "postgraduated", "label": "Postgraduatess" }
+        ],
+        "isRequired": true,
+        "validations": [
+            { "type": "required", "message": "Education level is required." }
+        ]
+    },
+    "experienceLevel": {
+        "type": "select",
+        "label": "Experience Level",
+        "name": "experienceLevel",
+        "placeholder": "Select your experience level",
+        "options": [
+            { "value": "beginner", "label": "Beginner" },
+            { "value": "intermediate", "label": "Intermediate" },
+            { "value": "advanced", "label": "Advanced" },
+            { "value": "expert", "label": "Expert" }
+        ],
+        "isRequired": false,
+        "validations": [
+            { "type": "required", "message": "Experience level is required." }
+        ]
+    },
+    "currentJobRole": {
+        "type": "select",
+        "label": "Current Job Role",
+        "name": "currentJobRole",
+        "placeholder": "Enter your current job role",
+        "options": [
+            { "value": "software_engineer", "label": "Software Engineer" },
+            { "value": "data_scientist", "label": "Data Scientist" },
+            { "value": "product_manager", "label": "Product Manager" },
+            { "value": "ux_designer", "label": "UX Designer" }
+        ],
+        "isRequired": true,
+        "validations": [
+            { "type": "required", "message": "Current job role is required." }
+        ]
+    },
+    "currentDesignation": {
+        "type": "select",
+        "label": "Current Designation",
+        "name": "currentDesignation",
+        "placeholder": "Enter your current designation",
+        "options": [
+            { "value": "junior", "label": "Junior" },
+            { "value": "mid", "label": "Mid" },
+            { "value": "senior", "label": "Senior" },
+            { "value": "lead", "label": "Lead" }
+        ],
+        "isRequired": true,
+        "validations": [
+            { "type": "required", "message": "Current designation is required." }
+        ]
+    },
+    "careerExpectation":{
+        "type": "multy-choise",
+        "label": "Whai is your career expectation?",
+        "name": "careerExpectation",
+        "placeholder": "Select your career expectation",
+        "options": [
+            { "id": 1, "text": "I need to get promoted", "value": "get_promoted", "description": "Get promoted to a higher position in your current field." },
+            { "id": 2, "text": "I need to change my career", "value": "change_career", "description": "Switch to a different career path." }
+        ],
+        "isRequired": true,
+        "validations": [
+            { "type": "required", "message": "Career expectation is required." }
+        ]
+    },
+    "guidanceExpectation": {
+        "type": "multy-choise",
+        "label": "What kind of guidance do you expect from your mentor?",
+        "name": "guidanceExpectation",
+        "placeholder": "Select your guidance expectation",
+        "options": [
+            { "id": 1, "text": "I know my expected role", "value": "know_role", "description": "I have a clear idea of the role I want to pursue." },
+            { "id": 2, "text": "I need career guidance", "value": "need_guidance", "description": "I need help in choosing the right career path." }
+        ],
+        "isRequired": true,
+        "validations": [
+            { "type": "required", "message": "Guidance expectation is required." }
+        ]
+    },
+    "expectedDesignation": {
+        "type": "select",
+        "label": "Expected Designation",
+        "name": "expectedDesignation",
+        "placeholder": "Enter your expected designation",
+        "options": [
+            { "value": "junior", "label": "Junior" },
+            { "value": "mid", "label": "Mid" },
+            { "value": "senior", "label": "Senior" },
+            { "value": "lead", "label": "Lead" }
+        ],
+        "isRequired": true,
+        "validations": [
+            { "type": "required", "message": "Expected designation is required." }
+        ]
+    },
+    "techStack": {
+        "type": "select",
+        "label": "Tech Stack",
+        "name": "techStack",
+        "placeholder": "Select your tech stack",
+        "options": [
+            { "value": "python", "label": "Python" },
+            { "value": "javascript", "label": "JavaScript" },
+            { "value": "java", "label": "Java" },
+            { "value": "csharp", "label": ".NET" }
+        ],
+        "isRequired": true,
+        "validations": [
+            { "type": "required", "message": "Tech stack is required." }
+        ]
+    },
+    "language": {
+        "type": "select",
+        "label": "Language",
+        "name": "language",
+        "placeholder": "Select your language",
+        "options": [
+            { "value": "english", "label": "English" },
+            { "value": "sinhala", "label": "Sinhala" }
+        ],
+        "isRequired": true,
+        "validations": [
+            { "type": "required", "message": "Language is required." }
+        ]
+    }
+}

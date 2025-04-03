@@ -28,7 +28,7 @@ const VideoCard: React.FC = () => {
         <p className="text-gray-500 text-sm">30 minutes</p>
       </div>
       <div className="flex justify-between items-center mt-4">
-       <SubmitButton onClick={()=>console.log("clicked calcel")} text="Select Mentor"/>
+       <SubmitButton onClick={()=>console.log("clicked calcel")} text="Select Mentor" fullWidth={true}/>
       </div>
     </div>
   );

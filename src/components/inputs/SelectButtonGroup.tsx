@@ -5,11 +5,15 @@ import { CheckCircleIcon as OutlineCheckCircleIcon } from "@heroicons/react/24/s
 interface Option {
   id: number;
   text: string;
+  value?: string;
+  description?: string;
 }
 
 interface SelectButtonGroupProps {
+  label: string;
   options: Option[];
-  onSelect: (id: number) => void;
+  isRequired: boolean;
+  onSelect: (option: Option) => void;
 }
 
 const options = [
@@ -17,21 +21,34 @@ const options = [
   { id: 2, text: "I need to change my career" },
 ];
 
-const SelectButtonGroup: React.FC<SelectButtonGroupProps> = ({options, onSelect}) => {
+const SelectButtonGroup: React.FC<SelectButtonGroupProps> = ({options, label, isRequired, onSelect}) => {
   const [selected, setSelected] = useState<number | null>(null);
 
-  const onSelectOption = (id: number) => {
-    setSelected(id);
-    onSelect(id);
+  const onSelectOption = (selected: Option) => {
+    setSelected(selected.id);
+    onSelect(selected);
   }
 
   return (
     <div className="mt-4 mb-4">
+      {/* Label */}
+      <label className="mb-2 text-base font-medium font-kanit">
+        {label}{" "}
+        {isRequired ? (
+          <span className="text-base-light font-light">{" *"}</span>
+        ) : (
+          <span className="text-base-light font-light">
+            <i>{"  (Optional)"}</i>
+          </span>
+        )}
+      </label>
+
+      {/* Button Group */}
     <div className="grid grid-cols-2 gap-x-6">
       {options.map((option) => (
         <button
           key={option.id}
-          onClick={() => onSelectOption(option.id)}
+          onClick={() => onSelectOption(option)}
           className={`relative flex items-center justify-center w-full h-30 p-4 font-kanit font-light text-base border-2 rounded-2xl transition-all
             ${
               selected === option.id

@@ -2,15 +2,18 @@
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import  Stepper from "../../components/progress/stepper";
+import StateProvider from "../StoreProvider";
+
 interface DashboardLayoutProps {
   children: ReactNode;
 }
 
 const steps = [
-  { path: "/mentoring/register", label: "Personal Details" },
-  { path: "/mentoring/mentors", label: "Select Mentor" },
-  { path: "/mentoring/preference", label: "Preferance" },
-  { path: "/mentoring/payment", label: "Payment & Confirm" }
+  { path: "/mentor-booking/register", label: "Personal Details" },
+  { path: "/mentor-booking/mentors", label: "Select Mentor" },
+  { path: "/mentor-booking/schedule", label: "Schedule" },
+  { path: "/mentor-booking/preference", label: "Preferance" },
+  { path: "/mentor-booking/payment", label: "Payment & Confirm" }
 ];
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
@@ -19,8 +22,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   console.log("pathname", currentPath);
   return (
     <div>
+      <StateProvider>
       <Stepper currentStep={currentPath} steps={steps}/>
       {children}
+      </StateProvider>
     </div>
   );
 }
