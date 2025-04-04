@@ -48,8 +48,8 @@ const Header = () => {
 
   return (
     <>
-    <header className="fixed top-0 left-0 w-full shadow-sm z-50 bg-white">
-      <div className="container mx-auto flex justify-between items-center p-4">
+    <header className="fixed top-0 left-0 w-full shadow-sm z-50 bg-white h-[60px]">
+      <div className="flex items-center justify-between px-4 h-full w-full">
         <Link href="/" className="text-xl font-bold text-primary-dark font-playfair">
           Try Your Mentor
         </Link>

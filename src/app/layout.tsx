@@ -43,7 +43,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen bg-background`}>
           <Header />
-          <main className="flex-grow max-w-7xl mx-auto w-full mt-20">
+          <main className="flex-grow w-full mt-[60px]">
             {children}
           </main>
           <Footer />

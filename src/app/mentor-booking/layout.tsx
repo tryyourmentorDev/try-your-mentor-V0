@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const currentPath = usePathname();
   console.log("pathname", currentPath);
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <StateProvider>
       <Stepper currentStep={currentPath} steps={steps}/>
       {children}
