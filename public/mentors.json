@@ -1,0 +1,82 @@
+[
+    {
+        "mentor": "John Doe",
+        "designation": "Senior Software Engineer",
+        "rating": 4.5,
+        "experience": 5,
+        "isFree": false,
+        "discount": 0
+    },
+    {
+        "mentor": "Jane Smith",
+        "designation": "Data Scientist",
+        "rating": 4.7,
+        "experience": 6,
+        "isFree": true,
+        "discount": 0
+    },
+    {
+        "mentor": "Alice Johnson",
+        "designation": "Product Manager",
+        "rating": 4.8,
+        "experience": 7,
+        "isFree": false,
+        "discount": 15
+    },
+    {
+        "mentor": "Bob Brown",
+        "designation": "UX Designer",
+        "rating": 4.6,
+        "experience": 4,
+        "isFree": true,
+        "discount": 0
+    },
+    {
+        "mentor": "Charlie Davis",
+        "designation": "DevOps Engineer",
+        "rating": 2.9,
+        "experience": 8,
+        "isFree": false,
+        "discount": 0
+    },
+    {
+        "mentor": "Diana Evans",
+        "designation": "Full Stack Developer",
+        "rating": 4.4,
+        "experience": 3,
+        "isFree": true,
+        "discount": 0
+    },
+    {
+        "mentor": "Ethan Foster",
+        "designation": "Data Analyst",
+        "rating": 4.3,
+        "experience": 2,
+        "isFree": false,
+        "discount": 5
+    },
+    {
+        "mentor": "Fiona Green",
+        "designation": "Machine Learning Engineer",
+        "rating": 3.5,
+        "experience": 5,
+        "isFree": false,
+        "discount": 10
+    },
+    {
+        "mentor": "George Harris",
+        "designation": "Cloud Architect",
+        "rating": 4.6,
+        "experience": 6,
+        "isFree": true,
+        "discount": 0
+    },
+    {
+        "mentor": "Hannah Ives",
+        "designation": "Cybersecurity Specialist",
+        "rating": 4.7,
+        "experience": 7,
+        "isFree": false,
+        "discount": 25
+    }
+]

@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import mentorBookingRegisterSlice from './features/mentor-booking/register'
+import mentorBookingMentorsSlice from './features/mentor-booking/mentors'
 
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      mentorBookingRegister :mentorBookingRegisterSlice
+      mentorBookingRegister :mentorBookingRegisterSlice,
+      mentorBookingMentors :mentorBookingMentorsSlice,
     }
   })
 }
