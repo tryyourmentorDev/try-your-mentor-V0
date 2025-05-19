@@ -10,7 +10,7 @@ interface StepperProps {
   currentStep: string;
 }
 
-const getStepDesign = (step: Step, status:String, index: number) => {
+const getStepDesign = (step: Step, status:string, index: number) => {
 
   console.log("step", status, index);
   switch (status) {
@@ -48,7 +48,7 @@ const getStepDesign = (step: Step, status:String, index: number) => {
 
 const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
 
-  const checkStepCompleted = (steps: Step[], currentStep: String, stepIndex: number) => {
+  const checkStepCompleted = (steps: Step[], currentStep: string, stepIndex: number) => {
     
     const currentStepIndex = steps.findIndex((step) => step.path === currentStep);
 

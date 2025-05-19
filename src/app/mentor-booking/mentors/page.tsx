@@ -1,13 +1,10 @@
 "use client"
-import React, { useState, useEffect, use  } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from "next/navigation";
 
 import MentorCard from '@/components/cards/MentorCard';
 import { fetchMentors } from '@/lib/features/mentor-booking/mentors';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-
-import SubmitButton from '@/components/buttons/SubmitButton';
-import CancelButton from '@/components/buttons/CancelButton';
 
 const MentorsPage: React.FC = () => {
 

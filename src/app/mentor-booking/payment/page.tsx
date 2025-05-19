@@ -1,7 +1,5 @@
 import React from 'react';
 
-import MentorCard from '@/components/cards/MentorCard';
-
 const PaymentPage: React.FC = () => {
   return (
     <div className="flex my-2 p-4 rounded-2xl shadow-md w-full">

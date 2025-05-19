@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import SubmitButton from "../buttons/SubmitButton";
-import StarDisplay from "../progress/StarDisplay";
 
 interface StepCardProps {
   title: string;
@@ -12,8 +9,7 @@ interface StepCardProps {
 
 const StepCard: React.FC<StepCardProps> = ({
   title,
-  description,
-  step
+  description
 }) => {
 
   return (

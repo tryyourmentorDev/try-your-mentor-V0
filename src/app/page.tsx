@@ -11,13 +11,18 @@ import howItWorks from "@/config/howItWorks.json";
 import testimonials from "@/config/testimonials.json";
 import faq from "@/config/faq.json";
 
+interface Testimonial {
+  name: string;
+  review: string;
+}
+
 export default function Home() {
-  const testimonialsFixedArray = Array.from({ length: 4 });
-  const remainingTestimonials = testimonials.length % 4;
+  const testimonialsFixedArray: Testimonial[] = Array.from({ length: 4 });
+  // const remainingTestimonials = testimonials.length % 4;
 
   const getEnd = (
-    testimonials: Array<any>,
-    testimonialsFixedArray: Array<any>,
+    testimonials: Array<Testimonial>,
+    testimonialsFixedArray: Array<Testimonial>,
     i: number
   ): number => {
     const size = testimonialsFixedArray.length;
@@ -28,8 +33,8 @@ export default function Home() {
     return end;
   };
   const getStart = (
-    testimonials: Array<any>,
-    testimonialsFixedArray: Array<any>,
+    testimonials: Array<Testimonial>,
+    testimonialsFixedArray: Array<Testimonial>,
     i: number
   ): number => {
     const size = testimonialsFixedArray.length;
@@ -40,9 +45,9 @@ export default function Home() {
     return start;
   };
 
-  const testimonialsArray = testimonials.map((item, index) => (
-    <TestimonialsCard key={index} name={item.name} review={item.review} />
-  ));
+  // const testimonialsArray = testimonials.map((item, index) => (
+  //   <TestimonialsCard key={index} name={item.name} review={item.review} />
+  // ));
 
   return (
     <div>
@@ -129,10 +134,10 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }} // Animation duration and easing
         >
           We believe that the best learning happens through real conversations
-          with those who've been there. Our platform connects mentees with
+          with those who&apos;ve been there. Our platform connects mentees with
           seasoned industry professionals across tech, business, design, and
-          more. Whether you're looking to grow your career, switch industries,
-          or gain practical insights, we're here to help.
+          more. Whether you&apos;re looking to grow your career, switch industries,
+          or gain practical insights, we&apos;re here to help.
         </motion.p>
       </div>
 
@@ -169,7 +174,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-4 mb-4 mx-4">
           {testimonialsFixedArray.map((_, i) => (
-            <div>
+            <div key={i} >
               {testimonials
                 .slice(
                   getStart(testimonials, testimonialsFixedArray, i),

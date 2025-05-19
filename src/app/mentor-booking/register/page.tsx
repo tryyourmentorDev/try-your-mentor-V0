@@ -7,24 +7,20 @@ import { useRouter } from "next/navigation";
 //   setEmail, setPassword,
 //   setEducationLevel, setExperienceLevel } from '@/store/slices/registerSlice';
 
-import {
-  setLastName,
-  setFistName
-} from "@/lib/features/mentor-booking/register";
-import {useAppStore, useAppSelector, useAppDispatch} from "@/lib/hooks";
+// import {
+//   setLastName,
+//   setFistName
+// } from "@/lib/features/mentor-booking/register";
+// import {useAppStore, useAppSelector, useAppDispatch} from "@/lib/hooks";
 
-import InputField from '@/components/inputs/inputFiled';
+// import InputField from '@/components/inputs/inputFiled';
 import Dropdown from '@/components/inputs/dropdownField';
 import SelectButtonGroup from '@/components/inputs/SelectButtonGroup';
 import SubmitButton from '@/components/buttons/SubmitButton';
 import CancelButton from '@/components/buttons/CancelButton';
-import { list } from 'postcss';
 
 
 import formConfig from "@/config/mentorBookingRegisterConfig.json";
-interface RegisterProps {
-  onRegister: (email: string, password: string) => void;
-}
 
 interface Form {
   educationLevel: string;
@@ -57,13 +53,13 @@ const iniTialForm: Form = {
   language: "",
 }
 
-const educationLeves = [{ label: 'High School', value: 'high_school' }, { label: 'Undergraduate', value: 'undergraduate' }, { label: 'Postgraduate', value: 'postgraduate' }];
-const experianceLevels = [{ label: 'Beginner', value: 'beginner' }, { label: 'Intermediate', value: 'intermediate' }, { label: 'Advanced', value: 'advanced' }];
-const currentJobRoles = [{ label: 'Software Engineer', value: 'software_engineer' }, { label: 'Data Scientist', value: 'data_scientist' }, { label: 'Product Manager', value: 'product_manager' }];
-const currentDesignations = [{ label: 'Software Engineer', value: 'software_engineer' }, { label: 'Data Scientist', value: 'data_scientist' }, { label: 'Product Manager', value: 'product_manager' }];
-const expectations1 = [{ id: 1, text: "I need to get promoted" },{ id: 2, text: "I need to change my career" }];
+// const educationLeves = [{ label: 'High School', value: 'high_school' }, { label: 'Undergraduate', value: 'undergraduate' }, { label: 'Postgraduate', value: 'postgraduate' }];
+// const experianceLevels = [{ label: 'Beginner', value: 'beginner' }, { label: 'Intermediate', value: 'intermediate' }, { label: 'Advanced', value: 'advanced' }];
+// const currentJobRoles = [{ label: 'Software Engineer', value: 'software_engineer' }, { label: 'Data Scientist', value: 'data_scientist' }, { label: 'Product Manager', value: 'product_manager' }];
+// const currentDesignations = [{ label: 'Software Engineer', value: 'software_engineer' }, { label: 'Data Scientist', value: 'data_scientist' }, { label: 'Product Manager', value: 'product_manager' }];
+// const expectations1 = [{ id: 1, text: "I need to get promoted" },{ id: 2, text: "I need to change my career" }];
 
-const Register: React.FC<RegisterProps> = ({ onRegister }) => {
+const Register: React.FC = () => {
 
   // const dispatch = useDispatch();
   // const { email, password, educationLevel, experienceLevel } = useSelector((state: RootState) => state.register);
@@ -93,7 +89,7 @@ const Register: React.FC<RegisterProps> = ({ onRegister }) => {
   }
 
   const onChangeMultiChoice = (selectOption: MultiChoiseOption, filedName: string) => {
-    const {id, value} = selectOption;
+    const { value} = selectOption;
     setForm((prevForm) => ({
       ...prevForm,
       [filedName]: value,

@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import SubmitButton from "../buttons/SubmitButton";
-import StarDisplay from "../progress/StarDisplay";
 
 interface TestimonialsCardProps {
   review: string;

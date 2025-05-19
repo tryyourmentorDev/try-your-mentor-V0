@@ -9,30 +9,30 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenAuthOverlay, setIsOpenAuthOverlay] = useState(false);
-  const [isFadingOut, setIsFadingOut] = useState(false); 
-  const [authLayoutType, setAuthLayoutType] = useState(""); 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isOpenAuthOverlay, setIsOpenAuthOverlay] = useState(false);
+  // const [isFadingOut, setIsFadingOut] = useState(false); 
+  // const [authLayoutType, setAuthLayoutType] = useState(""); 
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const onClickedSignUpButton = () => {
-    console.log("clicked on sign up button");
-    setIsOpenAuthOverlay(true);
-    setIsFadingOut(false);
-    setAuthLayoutType("sign-up-page-1");
-  }
-  const onClickedSignInButton = () => {
-    console.log("clicked on sign up button");
-    setIsOpenAuthOverlay(true);
-    setIsFadingOut(false);
-    setAuthLayoutType("sign-in-page-1");
-  }
+  // const onClickedSignUpButton = () => {
+  //   console.log("clicked on sign up button");
+  //   setIsOpenAuthOverlay(true);
+  //   setIsFadingOut(false);
+  //   setAuthLayoutType("sign-up-page-1");
+  // }
+  // const onClickedSignInButton = () => {
+  //   console.log("clicked on sign up button");
+  //   setIsOpenAuthOverlay(true);
+  //   setIsFadingOut(false);
+  //   setAuthLayoutType("sign-in-page-1");
+  // }
 
-  const closeOverlay = () => {
-    setIsFadingOut(true); // Start the fade-out effect
-    setTimeout(() => {
-      setIsOpenAuthOverlay(false); // Close overlay after animation
-    }, 300); 
-  }
+  // const closeOverlay = () => {
+  //   setIsFadingOut(true); // Start the fade-out effect
+  //   setTimeout(() => {
+  //     setIsOpenAuthOverlay(false); // Close overlay after animation
+  //   }, 300); 
+  // }
 
 //   const setSignInState = (state) => {
 //     console.log("setSignInState: ", state);
@@ -40,11 +40,11 @@ const Header = () => {
 //     setIsOpenAuthOverlay(false);
 //   }
 
-  const onClickLogOutButton = () => {
-    console.log("onClickLogOutButton: ");
-    setIsLoggedIn(false);
-    setIsOpenAuthOverlay(false);
-  }
+  // const onClickLogOutButton = () => {
+  //   console.log("onClickLogOutButton: ");
+  //   setIsLoggedIn(false);
+  //   setIsOpenAuthOverlay(false);
+  // }
 
   return (
     <>

@@ -35,7 +35,7 @@ const mentorBookingRegisterSlice = createSlice({
     setExperienceLevel: (state, action: PayloadAction<string>) => {
       state.experienceLevel = action.payload;
     },
-    clearRegisterData: (state) => {
+    clearRegisterData: () => {
       return initialState;
     },
   },

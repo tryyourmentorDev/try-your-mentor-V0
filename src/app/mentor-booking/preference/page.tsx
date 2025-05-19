@@ -2,7 +2,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-import MentorCard from "@/components/cards/MentorCard";
 import SubmitButton from "@/components/buttons/SubmitButton";
 import CancelButton from "@/components/buttons/CancelButton";
 

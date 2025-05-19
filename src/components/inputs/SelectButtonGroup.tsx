@@ -16,11 +16,6 @@ interface SelectButtonGroupProps {
   onSelect: (option: Option) => void;
 }
 
-const options = [
-  { id: 1, text: "I need to get promoted" },
-  { id: 2, text: "I need to change my career" },
-];
-
 const SelectButtonGroup: React.FC<SelectButtonGroupProps> = ({options, label, isRequired, onSelect}) => {
   const [selected, setSelected] = useState<number | null>(null);
 

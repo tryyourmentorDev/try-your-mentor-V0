@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk  } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk  } from "@reduxjs/toolkit";
 
 interface MentorsState {
     mentors: any[]; // Array of mentor names or IDs
