@@ -10,7 +10,7 @@ interface StepperProps {
   currentStep: string;
 }
 
-const getStepDesign = (step: Step, status:String, index: number) => {
+const getStepDesign = (step: Step, status:string, index: number) => {
 
   console.log("step", status, index);
   switch (status) {
@@ -20,18 +20,18 @@ const getStepDesign = (step: Step, status:String, index: number) => {
           <div className="flex items-center justify-center w-10 h-10 bg-linear-90 from-primary to-secondary text-white rounded-full">
             &#10003;
           </div>
-          <span className="ml-2 font-medium text-base font-kanit">
+          <span className="ml-2 text-primary font-kanit font-medium">
             {step.label}
           </span>
         </div>
       );
     case "Active":
       return (
-        <div id={index.toString()+"sub"} className="flex items-center">
+        <div id={index.toString()+"sub"} className="flex items-center font-kanit font-semibold">
           <div className="flex items-center justify-center w-10 h-10 border-2 border-primary text-primary rounded-full">
             {index}
           </div>
-          <span className="ml-2 text-primary-dark font-kanit">{step.label}</span>
+          <span className="ml-2 text-primary font-kanit font-semibold">{step.label}</span>
         </div>
       );
     case "Pending":
@@ -48,7 +48,7 @@ const getStepDesign = (step: Step, status:String, index: number) => {
 
 const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
 
-  const checkStepCompleted = (steps: Step[], currentStep: String, stepIndex: number) => {
+  const checkStepCompleted = (steps: Step[], currentStep: string, stepIndex: number) => {
     
     const currentStepIndex = steps.findIndex((step) => step.path === currentStep);
 
@@ -63,11 +63,11 @@ const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
 
   return (
     <div>
-      <div className="flex items-center bg-light p-4 my-2 rounded-2xl shadow-md w-full">
+      <div className="flex items-center bg-light p-4 mb-4 rounded-2xl shadow-md w-full">
         {steps.map((step, index) => (
           <>
             {index !== 0 && (
-              <div id={index.toString()} className={`flex-1 border-t-2 border-${ false ? "muted" : "primary"} mx-4`}></div>
+              <div id={index.toString()} className={`flex-1 border-t-2 border-${ true ? "muted" : "primary"} mx-4`}></div>
             )}
             {getStepDesign(step, checkStepCompleted(steps, currentStep, index), index + 1)}
           </>

@@ -44,6 +44,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           onChange={onChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          
           className={`w-full px-4 py-2 font-kanit font-light text-base text-base-dark border-2 focus:border-2 rounded-2xl outline-none transition-all duration-1000 appearance-none
             ${
               error
@@ -53,6 +54,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 : "border-muted"
             }`}
         >
+          <option value="" disabled></option>
           {options.map((option) => (
             <option className="bg-white text-base-dark p-2 hover:bg-primary hover:text-white" key={option.value} value={option.value}>
               {option.label}

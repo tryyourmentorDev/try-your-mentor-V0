@@ -1,0 +1,24 @@
+[
+      {
+        "step": 1,
+        "title": "Share Your Background",
+        "description": "Fill out a short form about your education, experience, and career goals. This helps us find the best mentor for you."
+      },
+      {
+        "step": 2,
+        "title": "Choose the Right Mentor",
+        "description": "We suggest top mentors based on your profile, or you can browse and pick one who fits your needs."
+      },
+      {
+        "step": 3,
+        "title": "Select a Convenient Time",
+        "description": "Pick a time that works for you from the mentor’s available slots. Scheduling is quick and easy."
+      },
+      {
+        "step": 4,
+        "title": "Meet, Learn, and Grow",
+        "description": "Join a one-on-one session, ask questions, and get expert advice to advance your career."
+      }
+    ]
+  
+  

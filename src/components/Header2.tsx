@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import Link from "next/link";
-import { FiMenu, FiX } from "react-icons/fi";
+// import { FiMenu, FiX } from "react-icons/fi";
 // import SignUpButton from "./SignUpButton";
 // import SignInButton from "./SignInButton";
 // import LogOutButton from "./LogOutButton";

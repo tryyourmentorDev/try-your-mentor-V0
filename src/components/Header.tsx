@@ -9,30 +9,30 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenAuthOverlay, setIsOpenAuthOverlay] = useState(false);
-  const [isFadingOut, setIsFadingOut] = useState(false); 
-  const [authLayoutType, setAuthLayoutType] = useState(""); 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isOpenAuthOverlay, setIsOpenAuthOverlay] = useState(false);
+  // const [isFadingOut, setIsFadingOut] = useState(false); 
+  // const [authLayoutType, setAuthLayoutType] = useState(""); 
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const onClickedSignUpButton = () => {
-    console.log("clicked on sign up button");
-    setIsOpenAuthOverlay(true);
-    setIsFadingOut(false);
-    setAuthLayoutType("sign-up-page-1");
-  }
-  const onClickedSignInButton = () => {
-    console.log("clicked on sign up button");
-    setIsOpenAuthOverlay(true);
-    setIsFadingOut(false);
-    setAuthLayoutType("sign-in-page-1");
-  }
+  // const onClickedSignUpButton = () => {
+  //   console.log("clicked on sign up button");
+  //   setIsOpenAuthOverlay(true);
+  //   setIsFadingOut(false);
+  //   setAuthLayoutType("sign-up-page-1");
+  // }
+  // const onClickedSignInButton = () => {
+  //   console.log("clicked on sign up button");
+  //   setIsOpenAuthOverlay(true);
+  //   setIsFadingOut(false);
+  //   setAuthLayoutType("sign-in-page-1");
+  // }
 
-  const closeOverlay = () => {
-    setIsFadingOut(true); // Start the fade-out effect
-    setTimeout(() => {
-      setIsOpenAuthOverlay(false); // Close overlay after animation
-    }, 300); 
-  }
+  // const closeOverlay = () => {
+  //   setIsFadingOut(true); // Start the fade-out effect
+  //   setTimeout(() => {
+  //     setIsOpenAuthOverlay(false); // Close overlay after animation
+  //   }, 300); 
+  // }
 
 //   const setSignInState = (state) => {
 //     console.log("setSignInState: ", state);
@@ -40,18 +40,18 @@ const Header = () => {
 //     setIsOpenAuthOverlay(false);
 //   }
 
-  const onClickLogOutButton = () => {
-    console.log("onClickLogOutButton: ");
-    setIsLoggedIn(false);
-    setIsOpenAuthOverlay(false);
-  }
+  // const onClickLogOutButton = () => {
+  //   console.log("onClickLogOutButton: ");
+  //   setIsLoggedIn(false);
+  //   setIsOpenAuthOverlay(false);
+  // }
 
   return (
     <>
-    <header className="bg-background shadow-sm">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <Link href="/" className="text-xl font-bold text-primary-dark font-kanit">
-          tryYourMentora
+    <header className="fixed top-0 left-0 w-full shadow-sm z-50 bg-white h-[60px]">
+      <div className="flex items-center justify-between px-4 h-full w-full">
+        <Link href="/" className="text-xl font-bold text-primary-dark font-playfair">
+          Try Your Mentor
         </Link>
 
         {/* Mobile Menu Button */}
@@ -66,14 +66,14 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-4">
           <Link
             href="/resume-review"
-            className="mx-2 text-primary font-kanit hover:text-secondary transition duration-300"
+            className="mx-2 text-primary font-montserrat font-semibold hover:text-secondary transition duration-300"
           >
             Resume Review
           </Link>
-          <Link href="/courses" className="mx-2 text-primary font-kanit hover:text-secondary transition duration-300">
+          <Link href="/courses" className="mx-2 text-primary font-montserrat font-semibold hover:text-secondary transition duration-300">
             Courses
           </Link>
-          <Link href="/mentoring/register" className="mx-2 text-primary font-kanit hover:text-secondary transition duration-300">
+          <Link href="/mentor-booking/register" className="mx-2 text-primary font-montserrat font-semibold hover:text-secondary transition duration-300">
             Mentoring
           </Link>
           {/* { !isLoggedIn ? <SignInButton onClick={()=>onClickedSignInButton()}/> : <></>} */}

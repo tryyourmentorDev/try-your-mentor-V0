@@ -4,18 +4,26 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --no-lint",
     "start": "next start",
+    "build:local": "NODE_ENV=local next build --no-lint",
+    "build:development": "NODE_ENV=development next build --no-lint",
+    "build:dev": "ENV_FILE=.env.dev next build --no-lint",
+    "build:prod": "NODE_ENV=production next build --no-lint",
     "lint": "next lint"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@next/env": "^15.3.2",
+    "@reduxjs/toolkit": "^2.6.1",
     "@tailwindcss/postcss": "^4.0.12",
+    "framer-motion": "^12.6.3",
     "next": "15.2.0",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
     "tailwindcss": "^4.0.12"
   },
   "devDependencies": {
