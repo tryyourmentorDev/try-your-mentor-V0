@@ -22,7 +22,7 @@ export const fetchMentors = createAsyncThunk("register/getMentors", async () => 
 
     console.log("fetching ENV in serside [NEXT_PUBLIC_BACKEND_URL]", process.env.NEXT_PUBLIC_BACKEND_URL);
     console.log("fetching ENV in serside [NEXT_PUBLIC_APP_ENV]", process.env.NEXT_PUBLIC_APP_ENV);
-    console.log("fetching ENV in serside", process.env);
+    console.log("fetching ENV in serside", JSON.stringify(process.env));
     const aaa =  await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/mentors.json`);
     console.log("result", aaa);
     return aaa.json();
