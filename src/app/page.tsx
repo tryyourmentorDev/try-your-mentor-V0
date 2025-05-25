@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import GetStartedButton from "@/components/buttons/GetStartedButton";
 import StepCard from "@/components/cards/StepCard";
@@ -17,6 +18,9 @@ interface Testimonial {
 }
 
 export default function Home() {
+
+  const router = useRouter();
+
   const testimonialsFixedArray: Testimonial[] = Array.from({ length: 4 });
   // const remainingTestimonials = testimonials.length % 4;
 
@@ -61,7 +65,7 @@ export default function Home() {
             transition={{ duration: 0.4, ease: "easeOut" }} // Animation duration and easing
           >
             <motion.h1
-              className="text-7xl 2xl:text-8xl font-playfair font-semibold mb-2"
+              className="text-5xl md:text-7xl 2xl:text-8xl font-playfair font-semibold mb-2"
               initial={{ opacity: 0, y: -20 }} // Start hidden and slightly above
               animate={{ opacity: 1, y: 0 }} // Fade in and slide to the original position
               transition={{ duration: 1, ease: "easeOut" }} // Animation duration and easing
@@ -87,7 +91,7 @@ export default function Home() {
             >
               <GetStartedButton
                 text="Find a Mentor"
-                onClick={() => console.log("clicked Find a Mentor")}
+                onClick={() => router.push("/mentor-booking/register")}
               />
               <GetStartedButton
                 text="Become a Mentor"
@@ -98,7 +102,7 @@ export default function Home() {
 
           {/* Right Section */}
           <motion.div
-            className="flex justify-center h-full w-full"
+            className="hidden md:flex justify-center h-full w-full"
             initial={{ opacity: 0, x: 50 }} // Start hidden and slightly to the right
             animate={{ opacity: 1, x: 0 }} // Fade in and slide to the original position
             transition={{ duration: 0.8, ease: "easeOut" }} // Animation duration and easing
@@ -117,9 +121,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center text-center items-center w-full h-[20vh] shadow-md mb-12 bg-linear-45 from-primary to-secondary">
+      <div className="flex flex-col justify-center text-center items-center w-full py-6 px-4 shadow-md mb-12 bg-linear-45 from-primary to-secondary">
         <motion.h1
-          className="text-4xl font-montserrat font-bold text-light mb-3"
+          className="text-4xl font-montserrat font-bold text-light mb-5"
           initial={{ opacity: 0, y: 50 }} // Start hidden and slightly to the right
           animate={{ opacity: 1, y: 0 }} // Fade in and slide to the original position
           transition={{ duration: 0.8, ease: "easeOut" }} // Animation duration and easing

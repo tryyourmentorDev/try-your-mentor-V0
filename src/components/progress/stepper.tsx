@@ -63,7 +63,12 @@ const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
 
   return (
     <div>
-      <div className="flex items-center bg-light p-4 mb-4 rounded-2xl shadow-md w-full">
+      <div className="flex md:hidden justify-center items-center bg-light p-4 mb-4 rounded-2xl shadow-md w-full">
+        <h1 className="text-2xl font-kanit font-semibold text-primary">
+          Steps
+        </h1>
+      </div>
+      <div className="hidden md:flex items-center bg-light p-4 mb-4 rounded-2xl shadow-md w-full">
         {steps.map((step, index) => (
           <>
             {index !== 0 && (
