@@ -18,6 +18,9 @@ const initialState: MentorsState = {
 };
 
 export const fetchMentors = createAsyncThunk("register/getMentors", async () => {
+  // Replace with your actual API endpoint or logic to fetch mentors
+
+    console.log("fetching ENV in serside", process.env);
     const aaa =  await fetch("http://192.168.1.5:3000/mentors.json");
     console.log("result", aaa);
     return aaa.json();
