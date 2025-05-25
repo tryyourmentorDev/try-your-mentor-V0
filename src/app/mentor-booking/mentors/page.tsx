@@ -13,6 +13,8 @@ const MentorsPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchMentors());
+    console.log("fetching mentors");
+    console.log("envies", process.env);
   }, [dispatch]);
 
   const mentorDetails = useAppSelector((state) => state.mentorBookingMentors);
