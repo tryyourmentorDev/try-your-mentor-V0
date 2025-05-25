@@ -38,7 +38,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${playfair.variable} ${poppins.variable} ${montserrat.variable} flex flex-col min-h-screen bg-background`}>
           <Header />
-          <main className="flex-grow w-full mt-[60px]">
+          <main className="flex-grow w-full mt-[60px] px-3">
             {children}
           </main>
           <Footer />
